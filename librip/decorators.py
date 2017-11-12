@@ -35,3 +35,18 @@
 # test_4
 # 1
 # 2
+
+
+def print_result(function):
+    def wrapped(*args, **kwargs):
+        print(function.__name__)
+        result = function(*args, **kwargs)
+
+        if isinstance(result, list):
+            print(*result, sep='\n')
+        elif isinstance(result, dict):
+            print(*['{} = {}'.format(k, v) for k, v in result.items()], sep='\n')
+        else:
+            print(result)
+        return result
+    return wrapped
