@@ -36,7 +36,6 @@
 # 1
 # 2
 
-
 def print_result(function):
     def wrapped(*args, **kwargs):
         print(function.__name__)

@@ -23,7 +23,7 @@ with open(path) as f:
 
 @print_result
 def f1(arg):
-    return sorted([i for i in unique(field(arg, 'job-name'), ignore_case=True)])
+    return sorted(unique(field(arg, 'job-name'), ignore_case=True))
 
 
 @print_result
